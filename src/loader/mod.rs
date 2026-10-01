@@ -19,7 +19,6 @@ struct Manifest {
 
 #[derive(Debug, Clone, Deserialize)]
 struct ManifestEntry {
-    #[serde(rename = "type")]
     kind: EntryType,
     paths: Vec<String>,
 }

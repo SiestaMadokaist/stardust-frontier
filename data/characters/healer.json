@@ -14,8 +14,8 @@
   "_comment.modifiers": "the modifier of type X is added to the value everytime this character apply that effect",
   "modifiers": [
     {
-        "type": "heal",
-        "value": 1  
+        "kind": "heal",
+        "value": 1
     }
   ],
   "_comment.triggers": "the shape is the same as effects, but applied at the trigger",
@@ -23,11 +23,11 @@
     "_comment:start": "activated when starting own turn",
     "start": [
       {
-        "type": "energy",
+        "kind": "energy",
         "value": 3
       },
       {
-        "type": "shield",
+        "kind": "shield",
         "value": 1
       }
     ],

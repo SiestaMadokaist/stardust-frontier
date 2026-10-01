@@ -13,11 +13,11 @@
   },
   "modifiers": [
     {
-        "type": "damage",
+        "kind": "damage",
         "value": 1
     },{
-        "type": "burn",
-        "value": 1  
+        "kind": "burn",
+        "value": 1
     }
   ],
   "_comment.triggers": "the shape is the same as effects, but applied at the trigger",
@@ -25,11 +25,11 @@
     "_comment:start": "activated when starting own turn",
     "start": [
       {
-        "type": "energy",
+        "kind": "energy",
         "value": 3
       },
       {
-        "type": "shield",
+        "kind": "shield",
         "value": 1
       }
     ],

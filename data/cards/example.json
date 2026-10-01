@@ -9,19 +9,19 @@
       "origins": [],
       "name": "example:heal",
       "src": "heal.webp",
-      "type": "event",
+      "kind": "event",
       "description": "apply heal twice to selectable target, the 1st target heal by 5, and the 2nd heal by 2 point",
       "cost": [
         {
-          "type": "energy",
+          "kind": "energy",
           "value": 1
         },
         {
-          "type": "hand:select",
+          "kind": "hand:select",
           "value": 1
         }
       ],
-      "_comment.cost": "cost.type is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
+      "_comment.cost": "cost.kind is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
       "targets": [
         {
           "side": "ally",
@@ -29,7 +29,7 @@
           "select": true,
           "effects": [
             {
-              "type": "heal",
+              "kind": "heal",
               "value": 5
             }
           ]
@@ -40,7 +40,7 @@
           "select": true,
           "effects": [
             {
-              "type": "heal",
+              "kind": "heal",
               "value": 2
             }
           ]
@@ -52,18 +52,18 @@
       "name": "example:firebolt",
       "description": "deal 3 damage and 1 burn to at most 2 unique selected target",
       "src": "firebolt.webp",
-      "type": "event",
+      "kind": "event",
       "cost": [
         {
-          "type": "energy",
+          "kind": "energy",
           "value": 1
         },
         {
-          "type": "hp",
+          "kind": "hp",
           "value": 5
         }
       ],
-      "_comment.cost": "cost.type is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
+      "_comment.cost": "cost.kind is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
       "targets": [
         {
           "_comment": "this effect targets at most 2 enemy that's selected at playtime, dealing 6 damage and 2 burn stack",
@@ -72,11 +72,11 @@
           "select": true,
           "effects": [
             {
-              "type": "damage",
+              "kind": "damage",
               "value": 3
             },
             {
-              "type": "burn",
+              "kind": "burn",
               "value": 1
             }
           ]
@@ -88,18 +88,18 @@
       "name": "example:meteor",
       "description": "deal 6 damage and 2 burns to 2 selectable target, and then deal 3 damage to all enemies",
       "src": "meteor.webp",
-      "type": "event",
+      "kind": "event",
       "cost": [
         {
-          "type": "energy",
+          "kind": "energy",
           "value": 1
         },
         {
-          "type": "hp",
+          "kind": "hp",
           "value": 2
         }
       ],
-      "_comment.cost": "cost.type is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
+      "_comment.cost": "cost.kind is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
       "targets": [
         {
           "_comment": "this effect targets at most 2 enemy that's selected at playtime, dealing 6 damage and 2 burn stack",
@@ -108,11 +108,11 @@
           "select": true,
           "effects": [
             {
-              "type": "damage",
+              "kind": "damage",
               "value": 6
             },
             {
-              "type": "burn",
+              "kind": "burn",
               "value": 2
             }
           ]
@@ -124,7 +124,7 @@
           "select": false,
           "effects": [
             {
-              "type": "damage",
+              "kind": "damage",
               "value": 3
             }
           ]

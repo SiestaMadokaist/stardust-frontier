@@ -2,14 +2,14 @@
   "root": "./data",
   "entries": [
     {
-      "type": "character",
+      "kind": "character",
       "paths": [
         "characters/wizard.json",
         "characters/healer.json"
       ]
     },
     {
-      "type": "cards",
+      "kind": "cards",
       "paths": [
         "cards/example.json"
       ]

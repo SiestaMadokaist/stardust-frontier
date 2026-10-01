@@ -21,7 +21,6 @@ pub struct CardDef {
     pub origins: Vec<String>,
     pub name: String,
     pub src: String,
-    #[serde(rename = "type")]
     pub kind: String,
     #[serde(default)]
     pub description: String,
@@ -32,7 +31,6 @@ pub struct CardDef {
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct Cost {
-    #[serde(rename = "type")]
     pub kind: CostType,
     pub value: u32,
 }
@@ -101,7 +99,6 @@ impl<'de> Deserialize<'de> for Multi {
 /// as gameplay features land, rather than kept as a closed enum here.
 #[derive(Debug, Clone, Deserialize)]
 pub struct Effect {
-    #[serde(rename = "type")]
     pub kind: String,
     pub value: i32,
 }
