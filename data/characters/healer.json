@@ -1,0 +1,39 @@
+{
+  "class": "PC",
+  "name": "healer",
+  "img": "./data/images/example/healer.webp",
+  "cards": [
+    "example:heal",
+    "example:firebolt"
+  ],
+  "stats": {
+    "hp": 30,
+    "max_energy": 8,
+    "initiative": 1
+  },
+  "_comment.modifiers": "the modifier of type X is added to the value everytime this character apply that effect",
+  "modifiers": [
+    {
+        "type": "heal",
+        "value": 1  
+    }
+  ],
+  "_comment.triggers": "the shape is the same as effects, but applied at the trigger",
+  "triggers": {
+    "_comment:start": "activated when starting own turn",
+    "start": [
+      {
+        "type": "energy",
+        "value": 3
+      },
+      {
+        "type": "shield",
+        "value": 1
+      }
+    ],
+    "_comment:end": "activated when ending turn",
+    "end": [],
+    "_comment:play": "activated every time playing a card",
+    "play": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "root": "./data",
+  "entries": [
+    {
+      "type": "character",
+      "paths": [
+        "characters/wizard.json",
+        "characters/healer.json"
+      ]
+    },
+    {
+      "type": "cards",
+      "paths": [
+        "cards/example.json"
+      ]
+    }
+  ]
+}

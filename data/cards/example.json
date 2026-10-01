@@ -1,0 +1,135 @@
+{
+  "namespace": "example",
+  "active": true,
+  "root": {
+    "images": "./data/images/example"
+  },
+  "cards": [
+    {
+      "origins": [],
+      "name": "example:heal",
+      "src": "heal.webp",
+      "type": "event",
+      "description": "apply heal twice to selectable target, the 1st target heal by 5, and the 2nd heal by 2 point",
+      "cost": [
+        {
+          "type": "energy",
+          "value": 1
+        },
+        {
+          "type": "hand:select",
+          "value": 1
+        }
+      ],
+      "_comment.cost": "cost.type is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
+      "targets": [
+        {
+          "side": "ally",
+          "multi": 1,
+          "select": true,
+          "effects": [
+            {
+              "type": "heal",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "side": "ally",
+          "multi": 1,
+          "select": true,
+          "effects": [
+            {
+              "type": "heal",
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "origins": [],
+      "name": "example:firebolt",
+      "description": "deal 3 damage and 1 burn to at most 2 unique selected target",
+      "src": "firebolt.webp",
+      "type": "event",
+      "cost": [
+        {
+          "type": "energy",
+          "value": 1
+        },
+        {
+          "type": "hp",
+          "value": 5
+        }
+      ],
+      "_comment.cost": "cost.type is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
+      "targets": [
+        {
+          "_comment": "this effect targets at most 2 enemy that's selected at playtime, dealing 6 damage and 2 burn stack",
+          "side": "enemy",
+          "multi": 2,
+          "select": true,
+          "effects": [
+            {
+              "type": "damage",
+              "value": 3
+            },
+            {
+              "type": "burn",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "origins": ["example:firebolt"],
+      "name": "example:meteor",
+      "description": "deal 6 damage and 2 burns to 2 selectable target, and then deal 3 damage to all enemies",
+      "src": "meteor.webp",
+      "type": "event",
+      "cost": [
+        {
+          "type": "energy",
+          "value": 1
+        },
+        {
+          "type": "hp",
+          "value": 2
+        }
+      ],
+      "_comment.cost": "cost.type is an enum of energy | hp | hand:select | hand:random | deck:top | deck:bottom",
+      "targets": [
+        {
+          "_comment": "this effect targets at most 2 enemy that's selected at playtime, dealing 6 damage and 2 burn stack",
+          "side": "enemy",
+          "multi": 2,
+          "select": true,
+          "effects": [
+            {
+              "type": "damage",
+              "value": 6
+            },
+            {
+              "type": "burn",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "_comment": "this effect targets all enemies, dealing 3 damage",
+          "side": "enemy",
+          "multi": "all",
+          "select": false,
+          "effects": [
+            {
+              "type": "damage",
+              "value": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
